@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  title: my api title goes here
+  description: my api description goes here
+  contact:
+    name: contractname
+    url: http://url.com.au
+  version: 1.0.0
+servers:
+  - url: https://localhost:829.api.com
+  - url: http://localhost:829.api.com
+paths:
+  /sudent:
+    description: student resouce
+    get:
+      description: operation to fetch students
+      parameters:
+        - in: query
+          name: studentName
+          required: true
+          schema:
+            type: string
+            example: Ajai
+      responses:
+        200:
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    studentId:
+                      type: integer
+                      example: 3
+                    studentName:
+                      type: string
+                      example: spikey
+                    studentRemark:
+                      type: string
+                      example: a grade student
+    post:
+      description: post operation for students
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  example: 4
+                studentName:
+                  type: string
+                  example: yobi
+                studentRemark:
+                  type: string
+                  example: this is a sample student
+      responses:
+        201:
+          description: sample response
+  /student{id}:
+    description: get students by id
+    get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  studentId:
+                    type: integer
+                    example: 6
+                  studentName:
+                    type: string
+                    example: Hudymd
+                  studentRemark:
+                    type: string
+                    example: this student is outstanding
+
+components:
+  schemas:
+    student:
+      type: object
+      properties:
+        studentId:
+          type: integer
+          example: 6
+        studentName:
+          type: string
+          example: Hudymd
+        studentRemark:
+          type: string
+          example: this student is outstanding
+    students:
+      type: array
+      items:
+        properties:
+          studentId:
+            type: integer
+            example: 6
+          studentName:
+            type: string
+            example: Hudymd
+          studentRemark:
+            type: string
+            example: this student is outstanding

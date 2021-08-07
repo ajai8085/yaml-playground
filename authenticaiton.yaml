@@ -27,14 +27,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/students'
+                $ref: 'student.schema.yaml#/components/schemas/students'
     post:
       description: post operation for students
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/student'
+              $ref: 'student.schema.yaml#/components/schemas/student'
       responses:
         201:
           description: sample response
@@ -53,32 +53,4 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/student'
-
-components:
-  schemas:
-    student:
-      type: object
-      properties:
-        studentId:
-          type: integer
-          example: 6
-        studentName:
-          type: string
-          example: Hudymd
-        studentRemark:
-          type: string
-          example: this student is outstanding
-    students:
-      type: array
-      items:
-        properties:
-          studentId:
-            type: integer
-            example: 6
-          studentName:
-            type: string
-            example: Hudymd
-          studentRemark:
-            type: string
-            example: this student is outstanding
+                $ref: 'student.schema.yaml#/components/schemas/student'

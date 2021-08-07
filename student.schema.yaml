@@ -1,0 +1,27 @@
+components:
+  schemas:
+    student:
+      type: object
+      properties:
+        studentId:
+          type: integer
+          example: 6
+        studentName:
+          type: string
+          example: Hudymd
+        studentRemark:
+          type: string
+          example: this student is outstanding
+    students:
+      type: array
+      items:
+        properties:
+          studentId:
+            type: integer
+            example: 6
+          studentName:
+            type: string
+            example: Hudymd
+          studentRemark:
+            type: string
+            example: this student is outstanding

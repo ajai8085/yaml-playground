@@ -27,35 +27,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  properties:
-                    studentId:
-                      type: integer
-                      example: 3
-                    studentName:
-                      type: string
-                      example: spikey
-                    studentRemark:
-                      type: string
-                      example: a grade student
+                $ref: '#/components/schemas/students'
     post:
       description: post operation for students
       requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                studentId:
-                  type: integer
-                  example: 4
-                studentName:
-                  type: string
-                  example: yobi
-                studentRemark:
-                  type: string
-                  example: this is a sample student
+              $ref: '#/components/schemas/student'
       responses:
         201:
           description: sample response
@@ -74,17 +53,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  studentId:
-                    type: integer
-                    example: 6
-                  studentName:
-                    type: string
-                    example: Hudymd
-                  studentRemark:
-                    type: string
-                    example: this student is outstanding
+                $ref: '#/components/schemas/student'
 
 components:
   schemas:
